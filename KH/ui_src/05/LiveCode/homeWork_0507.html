@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>회원가입_HomeWork</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "돋움", Arial;
+        color: #333;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+      h1 small {
+        font-size: 14px;
+        color: #666;
+        margin-left: 8px;
+      }
+      ol {
+        margin: 8px 0 20px 20px;
+        font-size: 13px;
+        color: #555;
+      }
+      ol li + li {
+        margin-top: 4px;
+      }
+
+      form {
+        width: 100%;
+      }
+      table.form-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 14px;
+      }
+      table.form-table th,
+      table.form-table td {
+        vertical-align: top;
+        padding: 8px 10px;
+        border-top: 1px solid #ddd;
+      }
+      table.form-table th {
+        width: 20%;
+        background: #f9f9f9;
+        color: #333;
+        font-weight: normal;
+      }
+      table.form-table td input[type="text"],
+      table.form-table td input[type="password"],
+      table.form-table td input[type="email"],
+      table.form-table td select {
+        font-size: 14px;
+        padding: 4px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+      }
+      table.form-table td input[type="text"] {
+        width: 180px;
+      }
+      table.form-table td input[name="site_ref_other"] {
+        width: 200px;
+      }
+      table.form-table td input[type="button"] {
+        margin-left: 6px;
+        padding: 4px 8px;
+        font-size: 13px;
+      }
+      table.form-table td p.helper {
+        margin-top: 6px;
+        font-size: 12px;
+        color: #888;
+        line-height: 1.4;
+      }
+
+      fieldset.path-group {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 6px;
+      }
+      fieldset.path-group legend {
+        font-weight: bold;
+        font-size: 13px;
+        color: #444;
+        padding: 0 4px;
+      }
+      .path-group label {
+        margin-right: 12px;
+        font-size: 14px;
+      }
+
+      .form-actions {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .form-actions input {
+        padding: 6px 20px;
+        font-size: 14px;
+        margin: 0 8px;
+        border: 1px solid #888;
+        border-radius: 3px;
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+      .form-actions input:hover {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입 <small>퍼스트드림과 함께 미래를 설계하세요.</small></h1>
+    <ol>
+      <li>다음의 회원정보를 입력하여 주시면 가입절차가 완료됩니다.</li>
+      <li>
+        허위로 작성된 가입정보일 경우 임의로 삭제처리될 수 있으니 주의해 주세요.
+      </li>
+    </ol>
+
+    <form action="#" method="post">
+      <table class="form-table">
+        <tr>
+          <th>이름(실명)</th>
+          <td>
+            <input type="text" name="name" placeholder="홍길동" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>생년월일</th>
+          <td>
+            <select name="birth_year">
+              <option value="">----</option>
+            </select>
+            년
+            <select name="birth_month">
+              <option value="">--</option>
+            </select>
+            월
+            <select name="birth_day">
+              <option value="">--</option>
+            </select>
+            일
+            <label
+              ><input type="radio" name="calendar" value="solar" checked />
+              양력</label
+            >
+            <label
+              ><input type="radio" name="calendar" value="lunar" /> 음력</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <th>회원 ID</th>
+          <td>
+            <input type="text" name="userid" placeholder="영문+숫자 4~18자" />
+            <input type="button" value="ID 중복확인" />
+            <p class="helper">
+              회원ID는 가입 후 변경이 불가능합니다.<br />
+              영문자로 시작하는 4~18자의 영문·숫자를 조합해 주세요.<br />
+              공백없이 기입해주세요
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <th>비밀번호</th>
+          <td>
+            <input type="password" name="pw" placeholder="비밀번호" />
+            <br /><br />
+            <label
+              >재입력
+              <input
+                type="password"
+                name="pw_confirm"
+                placeholder="비밀번호 확인"
+            /></label>
+          </td>
+        </tr>
+
+        <tr>
+          <th>이메일</th>
+          <td>
+            <input type="email" name="email" placeholder="email@example.com" />
+            <label
+              ><input type="checkbox" name="subscribe_mail" checked />
+              공지메일을 받음</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <th>자택전화</th>
+          <td>
+            <select name="home_tel1">
+              <option value="">국번</option>
+              <option>02</option>
+              <option>031</option>
+            </select>
+            - <input type="text" name="home_tel2" maxlength="4" /> -
+            <input type="text" name="home_tel3" maxlength="4" />
+          </td>
+        </tr>
+
+        <tr>
+          <th>휴대폰</th>
+          <td>
+            <select name="mobile_tel1">
+              <option value="">국번</option>
+              <option>010</option>
+              <option>011</option>
+            </select>
+            - <input type="text" name="mobile_tel2" maxlength="4" /> -
+            <input type="text" name="mobile_tel3" maxlength="4" />
+            <br />
+            <label
+              ><input type="checkbox" name="sms_alert" checked /> 상담전화와
+              문자메세지를 받음</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <th>자택주소</th>
+          <td>
+            <input
+              type="text"
+              name="postcode"
+              size="8"
+              placeholder="우편번호"
+              readonly
+            />
+            <input type="button" value="우편번호 검색" />
+            <br /><br />
+            <input
+              type="text"
+              name="address1"
+              placeholder="기본주소"
+              size="50"
+            />
+            <br /><br />
+            <input
+              type="text"
+              name="address2"
+              placeholder="상세주소"
+              size="50"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>직업</th>
+          <td>
+            <select name="job">
+              <option value="">선택하세요</option>
+              <option>학생</option>
+              <option>회사원</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <th>가입경로</th>
+          <td>
+            <!-- 구인·구직 사이트 -->
+            <fieldset class="path-group">
+              <legend>구인·구직 사이트</legend>
+              <label
+                ><input type="radio" name="site_job" value="albaon" checked />
+                알바몬</label
+              >
+              <label
+                ><input type="radio" name="site_job" value="albaheaven" />
+                알바천국</label
+              >
+              <label
+                ><input type="radio" name="site_job" value="incurt" />
+                인쿠르트</label
+              >
+              <label
+                ><input type="radio" name="site_job" value="jobkorea" />
+                잡코리아</label
+              >
+            </fieldset>
+            <fieldset class="path-group">
+              <legend>포털 사이트</legend>
+              <label
+                ><input type="radio" name="site_ref" value="naver" checked />
+                네이버검색</label
+              >
+              <label
+                ><input type="radio" name="site_ref" value="daum" />
+                다음검색</label
+              >
+              <label
+                ><input type="radio" name="site_ref" value="cafe" /> 카페</label
+              >
+              <label
+                ><input type="radio" name="site_ref" value="blog" />
+                블로그</label
+              >
+            </fieldset>
+            <fieldset class="path-group">
+              <legend>기타</legend>
+              <label
+                >직접입력
+                <input
+                  type="text"
+                  name="site_ref_other"
+                  placeholder="기타 경로"
+                />
+              </label>
+            </fieldset>
+          </td>
+        </tr>
+      </table>
+
+      <div class="form-actions">
+        <input type="submit" value="회원가입" />
+        <input type="button" value="취소·이전" onclick="history.back();" />
+      </div>
+    </form>
+  </body>
+</html>

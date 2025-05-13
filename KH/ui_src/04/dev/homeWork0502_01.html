@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Advance HTML Table In Hindi</title>
+    <style>
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
+      }
+      th,
+      td {
+        border: 1px solid #000;
+        padding: 10px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .day-column {
+        background-color: #add8e6;
+      }
+      caption {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Advance HTML Table In Hindi
+      </caption>
+      <tr>
+        <th class="day-column" rowspan="2">Day</th>
+        <th colspan="2">Seminar</th>
+        <th rowspan="2">Topic</th>
+      </tr>
+      <tr>
+        <th>Start</th>
+        <th>End</th>
+      </tr>
+      <tr>
+        <td class="day-column" rowspan="2">Monday</td>
+        <td>08:00 AM</td>
+        <td>05:00 PM</td>
+        <td>Introduction</td>
+      </tr>
+      <tr>
+        <td>08:00 AM</td>
+        <td>11:00 PM</td>
+        <td>Uses</td>
+      </tr>
+      <tr>
+        <td class="day-column" rowspan="3">Tuesday</td>
+        <td>11:00 AM</td>
+        <td>02:00 PM</td>
+        <td>Learn</td>
+      </tr>
+      <tr>
+        <td>02:00 PM</td>
+        <td>08:00 PM</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td>10:00 AM</td>
+        <td>01:00 PM</td>
+        <td>--</td>
+      </tr>
+      <tr>
+        <td class="day-column">Wed-Fri</td>
+        <td colspan="2">Full Day</td>
+        <td>Practical</td>
+      </tr>
+      <tr>
+        <td class="day-column">Sat-Sun</td>
+        <td colspan="2">11:00 AM - 05:00 PM</td>
+        <td>Extra Class</td>
+      </tr>
+    </table>
+  </body>
+</html>
